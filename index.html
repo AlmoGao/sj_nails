@@ -10,8 +10,37 @@
     
 
     <style>
+      @keyframes loading {
+        from {transform: translateY(0);} 
+        to {transform: translateY(-110%);}
+      }
+      @-webkit-keyframes loading {
+        from {transform: translateY(0);} 
+        to {transform: translateY(-110%);}
+      }
+      @keyframes text {
+        from {text-shadow: #ff00de -1vw -1vw, #2addfd 0.5vw 0vw;} 
+        to {text-shadow: #ff00de -0.5vw -1vw, #2addfd 1vw 0vw;}
+      }
+      @-webkit-keyframes text {
+        from {text-shadow: #ff00de -1vw -1vw, #2addfd 0.5vw 0vw;} 
+        to {text-shadow: #ff00de -0.5vw -1vw, #2addfd 1vw 0vw;}
+      }
       #loading {
-        width: 100%;height: 100%;position: fixed;top: 0;left: 0;background-color: #000;color: #fff;font-size: 2rem;display: flex;justify-content: center;align-items: center;
+        width: 100%;
+        height: calc(150%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        color: #fff;
+        font-size: 12vw;
+        animation: loading 1s ease-in-out 1s 1 forwards, text .4s infinite ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 100vh;
+        box-sizing: border-box;
       }
       .section {
         width: 100%;height: 100%;position: relative;overflow: hidden;
