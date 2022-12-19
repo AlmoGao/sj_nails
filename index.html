@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="./favicon.ico">
-    <title>SJ nails</title>
+    <title>Nails 4U</title>
     <link rel="stylesheet" href="./css/fullpage.css">
     
 
@@ -74,17 +74,93 @@
         animation: hands 1s ease-in-out 2s 1 forwards;
       }
       .section1 .hands img { width: 100%; height: 100%; }
+      .section1 .title {
+        font-size: 5vw;
+        color: #ce4efd;
+        padding: 8vw;
+      }
+      .section1 .title b {
+        font-size: 10vw;
+        display: inline-block;
+        margin-bottom: 5vw;
+        text-shadow: 0 1px hsl(0,0%,85%),
+            0 2px hsl(0,0%,80%),
+            0 3px hsl(0,0%,75%), 
+            0 4px hsl(0,0%,70%), 
+            0 5px hsl(0,0%,65%),
+            0 5px 10px #ce4efd;
+      }
+      .section1 .classes {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 14vw;
+        padding: 4vw;
+        margin: 0 6vw;
+        overflow: hidden;
+        border-radius: 2vw;
+        box-shadow: inset 0 0 4vw rgba(188,19,254,0.1);
+      }
+      .section1 .classes .item {
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 2vw;
+      }
+      @keyframes flash {
+        from {transform: translateX(-200vw) skewx(-50deg);} 
+        to {transform: translateX(400vw) skewx(-50deg);}
+      }
+      @-webkit-keyframes flash {
+        from {transform: translateX(-200vw) skewx(-50deg);} 
+        to {transform: translateX(400vw) skewx(-50deg);}
+      }
+      .section1 .classes .flash {
+        animation: flash 3s linear infinite;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        transform: translateX(-100vw) skewx(-50deg);
+        width: 5vw;
+        height: 35vw;
+        background-image: -moz-linear-gradient(0deg,rgba(255,255,255,0),rgba(206,78,253,0.1),rgba(255,255,255,0));
+        background-image: -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(206,78,253,0.1),rgba(255,255,255,0));
+        -o-transform: translateX(-100vw) skewx(-50deg);
+        -moz-transform: translateX(-100vw) skewx(-50deg);
+        -webkit-transform: translateX(-100vw) skewx(-50deg);
+      }
+      .section1 .classes .right {
+        justify-content: flex-end;
+      }
+      .section1 .classes .item .icon {
+        display: inline-block;
+        width: 2vw;
+        height: 2vw;
+        border-radius: 50%;
+        background-color: #ce4efd;
+        margin: 0 2vw;
+      }
     </style>
   </head>
   <body>
     <!-- 加载 -->
     <div id="loading">
-      <span>SJ nails</span>
+      <span>Nails 4U</span>
     </div>
     <!-- 页面 -->
     <div id="fullpage">
         <!-- 落地 -->
         <div class="section section1">
+          <!-- 标题 -->
+          <div class="title">
+            <b>Nails 4U</b>
+            <br />
+            <i>-- Your Professional Nail Nanny</i>
+          </div>
           <!-- 手 -->
           <div class="hands">
             <img src="./img//hands.png" alt="">
@@ -161,6 +237,34 @@
             <div class="fly-ball fly-ball-8"></div>
             <div class="fly-ball fly-ball-9"></div>
             <div class="fly-ball fly-ball-10"></div>
+          </div>
+          <!-- 分类 -->
+          <div class="classes">
+            <div class="flash"></div>
+            <div class="item">
+              <span class="icon"></span>
+              <span>ทาสีเจล​เท้า​</span>
+            </div>
+            <div class="item right">
+              <span>ทาสีธรรมดา​</span>
+              <span class="icon"></span>
+            </div>
+            <div class="item">
+              <span class="icon"></span>
+              <span>ถอดเล็บอะคริลิ​ค</span>
+            </div>
+            <div class="item right">
+              <span>ต่อขน​ตา​</span>
+              <span class="icon"></span>
+            </div>
+            <div class="item">
+              <span class="icon"></span>
+              <span>ทาสีเจลมือ</span>
+            </div>
+            <div class="item right">
+              <span>ต่อพีวีซี</span>
+              <span class="icon"></span>
+            </div>
           </div>
         </div>
 
