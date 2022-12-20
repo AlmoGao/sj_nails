@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="./favicon.ico">
-    <title>Nails 4U</title>
+    <title>SJ Nails</title>
     <link rel="stylesheet" href="./css/fullpage.css">
     
 
@@ -144,12 +144,46 @@
         background-color: #ce4efd;
         margin: 0 2vw;
       }
+
+      /* 导航 */
+      #navs  {
+        position: fixed;
+        z-index: 99;
+        right: 3vw;
+        top: 6vw;
+        display: flex;
+        /* transform: translateY(-50%); */
+      }
+      #navs .nav {
+        width: 8vw;
+        height: 8vw;
+        margin: 0 2vw;
+      }
+      #navs .nav a {
+        display:block;width:100%;height:100%
+      }
+      #navs .nav img {
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <!-- 加载 -->
     <div id="loading">
-      <span>Nails 4U</span>
+      <span>SJ Nails</span>
+    </div>
+    <!-- 导航 -->
+    <div id="navs">
+      <div class="nav">
+        <a target="_blank" href="http://line.me/ti/p/~hello" ><img src="./img/line.svg" alt=""></a>
+      </div>
+      <div class="nav">
+        <a target="_blank" href="tel:123456789" ><img src="./img/phone.svg" alt=""></a>
+      </div>
+      <div class="nav">
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=15.269374657798%2C104.84060078859&fbclid=IwAR1_jmX8IXphdeESCbXdtEIDw2C42Ud-9CFc4pc0PHXDwcg6uXzh4ZEtflM"><img src="./img/address.svg" alt=""></a>
+      </div>
     </div>
     <!-- 页面 -->
     <div id="fullpage">
@@ -157,7 +191,7 @@
         <div class="section section1">
           <!-- 标题 -->
           <div class="title">
-            <b>Nails 4U</b>
+            <b>SJ Nails</b>
             <br />
             <i>-- Your Professional Nail Nanny</i>
           </div>
