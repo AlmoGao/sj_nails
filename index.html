@@ -10,6 +10,9 @@
     
 
     <style>
+      div {
+        box-sizing: border-box;
+      }
       @keyframes loading {
         from {transform: translateY(0);} 
         to {transform: translateY(-110%);}
@@ -145,6 +148,118 @@
         margin: 0 2vw;
       }
 
+      /* 展示页 */
+      .section2 .title-tip {
+        position: absolute;
+        top: 7vw;
+        left: 6vw;
+        width: 60vw;
+        font-size: 12px;
+        /* color: #ce4efd; */
+      }
+      .section2 .wall {
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 100;
+      }
+      .section2 .wall .wall-item {
+        position: absolute;
+        background-color: rgba(206,78,253,0.1);
+        border: 1vw solid rgba(206,78,253,0.2);
+        border-radius: 2vw;
+        box-shadow: inset 0vw 0vw 2vw rgba(206,78,253,0.2);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        transition: all .3s ease-in-out;
+        transform-origin: 50% 50%;
+      }
+      .section2 .wall .wall-item img {
+        width: 100%;
+      }
+      .section2 .wall .wall-item1 {
+        height: 31vw;
+        width: 41vw;
+        top: -55vw;
+        left: -40vw;
+      }
+      .section2 .wall .wall-item2 {
+        height: 37vw;
+        width: 27vw;
+        top: -50vw;
+        left: 8vw;
+      }
+      .section2 .wall .wall-item3 {
+        width: 44vw;
+        height: 22vw;
+        top: -16vw;
+        left: -44vw;
+      }
+      .section2 .wall .wall-item4 {
+        width: 41vw;
+        height: 23vw;
+        left: 4vw;
+        top: 4vw;
+      }
+      .section2 .wall .wall-item5 {
+        width: 47vw;
+        height: 29vw;
+        top: 40vw;
+        left: -5vw;
+      }
+      .section2 .wall .wall-item6 {
+        width: 27vw;
+        height: 37vw;
+        top: 24vw;
+        left: -40vw;
+      }
+      .section2 .wall .wall-item-bg1 {
+        z-index: 99;
+        width: 26vw;
+        height: 42vw;
+        top: -40vw;
+        left: -24vw;
+        transform: rotate(-30deg);
+      }
+      .section2 .wall .wall-item-bg2 {
+        z-index: 99;
+        width: 26vw;
+        height: 42vw;
+        top: 8vw;
+        left: -60vw;
+        transform: rotate(20deg);
+      }
+      .section2 .wall .wall-item-bg3 {
+        z-index: 99;
+        width: 22vw;
+        height: 40vw;
+        top: 2vw;
+        transform: rotate(16deg);
+      }
+      .section2 .wall .wall-item-bg4 {
+        z-index: 99;
+        width: 24vw;
+        height: 38vw;
+        top: -40vw;
+        left: 28vw;
+        transform: rotate(-18deg);
+      }
+      .section2 .wall .active-wall {
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        z-index: 101;
+        left: -50vw;
+        top: -50vh;
+        border: 1vw solid rgba(206,78,253,1);
+        padding: 2vw;
+      }
+
       /* 导航 */
       #navs  {
         position: fixed;
@@ -176,10 +291,10 @@
     <!-- 导航 -->
     <div id="navs">
       <div class="nav">
-        <a target="_blank" href="http://line.me/ti/p/~hello" ><img src="./img/line.svg" alt=""></a>
+        <a target="_blank" href="http://line.me/ti/p/~srp2602" ><img src="./img/line.svg" alt=""></a>
       </div>
       <div class="nav">
-        <a target="_blank" href="tel:123456789" ><img src="./img/phone.svg" alt=""></a>
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100023075358931" ><img src="./img/facebook.svg" alt=""></a>
       </div>
       <div class="nav">
         <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=15.269374657798%2C104.84060078859&fbclid=IwAR1_jmX8IXphdeESCbXdtEIDw2C42Ud-9CFc4pc0PHXDwcg6uXzh4ZEtflM"><img src="./img/address.svg" alt=""></a>
@@ -302,7 +417,29 @@
           </div>
         </div>
 
-        <div class="section section2">Some section 2</div>
+        <!-- 图片介绍 -->
+        <div class="section section2">
+          <div class="title-tip">สอบถามรายละเอียดเพิ่มเติมติดต่อ👉</div>
+          <!-- 图片墙 -->
+          <div class="wall">
+            <div onclick="checkWall(1)" class="wall-item wall-item1">
+              <img class="wall-image1" src="#" alt=""></div>
+            <div onclick="checkWall(2)" class="wall-item wall-item2">
+              <img class="wall-image2" src="#" alt=""></div>
+            <div onclick="checkWall(3)" class="wall-item wall-item3">
+              <img class="wall-image3" src="#" alt=""></div>
+            <div onclick="checkWall(4)" class="wall-item wall-item4">
+              <img class="wall-image4" src="#" alt=""></div>
+            <div onclick="checkWall(5)" class="wall-item wall-item5">
+              <img class="wall-image5" src="#" alt=""></div>
+            <div onclick="checkWall(6)" class="wall-item wall-item6">
+              <img class="wall-image6" src="#" alt=""></div>
+            <div class="wall-item wall-item-bg1"></div>
+            <div class="wall-item wall-item-bg2"></div>
+            <div class="wall-item wall-item-bg3"></div>
+            <div class="wall-item wall-item-bg4"></div>
+          </div>
+        </div>
 
         <div class="section section3">Some section 3</div>
 
@@ -310,12 +447,34 @@
     </div>
 
     <link rel="stylesheet" href="./css/fly.css">
-    <script src="./js/fullpage.min.js"></script>
     <script>
-      new fullpage('#fullpage', {
+      console.log(12)
+      window.onload = () => {
+        loadWalls()
+        new fullpage('#fullpage', {
           autoScrolling:true,
           scrollHorizontally: true
-      })
+        })
+      }
+
+      // 照片墙
+      function loadWalls () {
+        for(let i = 1; i <= 6; i++) {
+          const dom = document.querySelector('.wall-image' + i)
+          if (!dom) continue
+          dom.src = './img/' + i + '.webp'
+        }
+      }
+      function checkWall (e) {
+        const dom = document.querySelector('.wall-item' + e)
+        if (!dom) return
+        if (dom.className.includes('active-wall')) {
+          dom.className = dom.className.replace('active-wall', '')
+        } else {
+          dom.className = dom.className + ' active-wall'
+        }
+      }
     </script>
+    <script src="./js/fullpage.min.js"></script>
   </body>
 </html>
