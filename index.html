@@ -176,7 +176,7 @@
         justify-content: center;
         align-items: center;
         z-index: 100;
-        transition: all .3s ease-in-out;
+        transition: all .5s ease-in-out;
         transform-origin: 50% 50%;
       }
       .section2 .wall .wall-item img {
@@ -259,6 +259,127 @@
         border: 1vw solid rgba(206,78,253,1);
         padding: 2vw;
       }
+
+      /* 总结页 */
+      .section4 .hand-box {
+        position: absolute;
+        left: 50%;
+        width: 0;
+        height: 0;
+        top: 60%;
+      }
+      .section4 .hand-box .hand {
+        width: 30vw;
+        height: 24vw;
+        position: absolute;
+      }
+      .section4 .hand-box .hand div, .section4 .hand-box .hand img {
+        width: 100%;
+        height: 100%;
+      }
+      .section4 .hand-box .left-hand {
+        transition: all 0.8s ease-in-out;
+        transform: translateX(calc(-100vw));
+      }
+      .section4 .hand-box .left-hand-active {
+        transform: translateX(calc(-50vw));
+      }
+      .section4 .hand-box .right-hand {
+        transform: translateX(calc(100vw - 30vw));
+        transition: all 0.8s ease-in-out;
+      }
+      .section4 .hand-box .right-hand-active {
+        transform: translateX(calc(50vw - 30vw));
+      }
+      .section4 .hand-box .left-hand .left-hand-img {
+        transform: rotateY(180deg);
+      }
+      @keyframes beat {
+        0% {transform: scale(0.6)} 
+        30% {transform: scale(0.7)}
+        40% {transform: scale(0.8)}
+        50% {transform: scale(0.7)}
+        60% {transform: scale(0.8)}
+        100% {transform: scale(0.6)}
+      }
+      @-webkit-keyframes beat {
+        0% {transform: scale(0.6)} 
+        30% {transform: scale(0.7)}
+        40% {transform: scale(0.8)}
+        50% {transform: scale(0.7)}
+        60% {transform: scale(0.8)}
+        100% {transform: scale(0.6)}
+      }
+      @keyframes beat-shadow {
+        0% {transform: scale(0.6);top:0} 
+        30% {transform: scale(0.6);top:0}
+        40% {transform: scale(0.6);top:0}
+        50% {transform: scale(0.6);top:0}
+        100% {transform: scale(15);top:-150vw}
+      }
+      @-webkit-keyframes beat-shadow {
+        0% {transform: scale(0.6);top:0} 
+        30% {transform: scale(0.6);top:0}
+        40% {transform: scale(0.6);top:0}
+        50% {transform: scale(0.6);top:0}
+        100% {transform: scale(15);top:-150vw}
+      }
+      .section4 .heart {
+        width: 0;
+        height: 0;
+        position: relative;
+        opacity: 0.05;
+        transition: all 1s ease-in-out;
+        transition-delay: 0.8s;
+      }
+      .section4 .heart-beat {
+        opacity: 1;
+        animation: beat 1.6s ease-in-out infinite;
+        transform-origin: center center;
+      }
+      .section4 .heart-beat-shadow {
+        animation: beat-shadow 1.6s ease-in-out infinite forwards;
+        transform-origin: center center;
+      }
+      .section4 .heart .heart-item {
+        background-color: #ed6e84;
+        position: absolute;
+      }
+      .section4 .heart .heart-left {
+        width: 18vw;
+        height: 18vw;
+        border-radius: 50%;
+        left: -15vw;
+      }
+      .section4 .heart .heart-right {
+        width: 18vw;
+        height: 18vw;
+        left: -3vw;
+        border-radius: 50%;
+      }
+      .section4 .heart .heart-bottom {
+        width: 20vw;
+        height: 20vw;
+        transform: rotate(45deg);
+        left: -10vw;
+        top: 3.8vw;
+        border-top-right-radius: 2vw;
+        border-top-left-radius: 6vw;
+        border-bottom-left-radius: 3vw;
+      }
+      .section4 .time {
+        color: #ed6e84;
+        font-size: 8vw;
+        position: absolute;
+        top: 40%;
+        text-align: center;
+        width: 100%;
+        transform: translateY(-50%);
+      }
+      .section4 .time span {
+        font-size: 5vw;
+      }
+      
 
       /* 导航 */
       #navs  {
@@ -430,17 +551,17 @@
           <div class="title-tip">สอบถามรายละเอียดเพิ่มเติมติดต่อ👉</div>
           <!-- 图片墙 -->
           <div class="wall">
-            <div onclick="checkWall(1)" class="wall-item wall-item1">
+            <div onclick="checkWall(1)" class="wall-item wall-item1 active-wall">
               <img class="wall-image1" src="#" alt=""></div>
-            <div onclick="checkWall(2)" class="wall-item wall-item2">
+            <div onclick="checkWall(2)" class="wall-item wall-item2 active-wall">
               <img class="wall-image2" src="#" alt=""></div>
-            <div onclick="checkWall(3)" class="wall-item wall-item3">
+            <div onclick="checkWall(3)" class="wall-item wall-item3 active-wall">
               <img class="wall-image3" src="#" alt=""></div>
-            <div onclick="checkWall(4)" class="wall-item wall-item4">
+            <div onclick="checkWall(4)" class="wall-item wall-item4 active-wall">
               <img class="wall-image4" src="#" alt=""></div>
-            <div onclick="checkWall(5)" class="wall-item wall-item5">
+            <div onclick="checkWall(5)" class="wall-item wall-item5 active-wall">
               <img class="wall-image5" src="#" alt=""></div>
-            <div onclick="checkWall(6)" class="wall-item wall-item6">
+            <div onclick="checkWall(6)" class="wall-item wall-item6 active-wall">
               <img class="wall-image6" src="#" alt=""></div>
             <div class="wall-item wall-item-bg1"></div>
             <div class="wall-item wall-item-bg2"></div>
@@ -451,17 +572,90 @@
 
         <div class="section section3">Some section 3</div>
 
-        <div class="section section4">Some section 4</div>
+        <!-- 结尾总结 -->
+        <div class="section section4">
+
+          <!-- 营业时间 -->
+          <div class="time"><span>Welcome</span> <br/> 10:00<span>am</span> -- 20:00<span>pm</span> <br/> <span>ยินดีต้อนรับ</span> </div>
+          <!-- 双手 -->
+          <div class="hand-box">
+            <div class="hand left-hand">
+              <img class="left-hand-img" src="#" alt="">
+            </div>
+            <div class="hand right-hand">
+              <img class="right-hand-img" src="#" alt="">
+            </div>
+
+            <!-- 心 -->
+            <div class="heart">
+              <div class="heart-item heart-left"></div>
+              <div class="heart-item heart-right"></div>
+              <div class="heart-item heart-bottom"></div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <link rel="stylesheet" href="./css/fly.css">
     <script>
-      console.log(12)
       window.onload = () => {
         loadWalls()
+        loadHands()
+
+        // 照片墙
+        const wallItem1 = document.querySelector('.wall-item1')
+        const wallItem2 = document.querySelector('.wall-item2')
+        const wallItem3 = document.querySelector('.wall-item3')
+        const wallItem4 = document.querySelector('.wall-item4')
+        const wallItem5 = document.querySelector('.wall-item5')
+        const wallItem6 = document.querySelector('.wall-item6')
+
+        const handBox = document.querySelector('.hand-box')
+        // 双手
+        const leftHand = document.querySelector('.left-hand')
+        const rightHand = document.querySelector('.right-hand')
+        // 心
+        const heart = document.querySelector('.heart')
+        const heartShadow = heart.cloneNode(true)
+        
         new fullpage('#fullpage', {
           autoScrolling:true,
-          scrollHorizontally: true
+          scrollHorizontally: true,
+          onLeave: function (index, nextIndex) {
+            switch (Number(index.index)) { // 离开
+              case 1:
+                wallItem1.className = 'wall-item wall-item1 active-wall'
+                wallItem2.className = 'wall-item wall-item2 active-wall'
+                wallItem3.className = 'wall-item wall-item3 active-wall'
+                wallItem4.className = 'wall-item wall-item4 active-wall'
+                wallItem5.className = 'wall-item wall-item5 active-wall'
+                wallItem6.className = 'wall-item wall-item6 active-wall'
+                break
+              case 3:
+                leftHand.className = 'hand left-hand'
+                rightHand.className = 'hand right-hand'
+                heart.className = 'heart'
+                handBox.removeChild(heartShadow)
+                break
+            }
+            switch (Number(nextIndex.index)) { // 进入
+              case 1:
+                wallItem1.className = 'wall-item wall-item1'
+                wallItem2.className = 'wall-item wall-item2'
+                wallItem3.className = 'wall-item wall-item3'
+                wallItem4.className = 'wall-item wall-item4'
+                wallItem5.className = 'wall-item wall-item5'
+                wallItem6.className = 'wall-item wall-item6'
+                break
+              case 3:
+                leftHand.className = 'hand left-hand left-hand-active'
+                rightHand.className = 'hand right-hand right-hand-active'
+                heart.className = 'heart heart-beat'
+                heartShadow.className = 'heart heart-beat-shadow'
+                handBox.appendChild(heartShadow)
+                break
+            }
+          }
         })
       }
 
@@ -480,6 +674,18 @@
           dom.className = dom.className.replace('active-wall', '')
         } else {
           dom.className = dom.className + ' active-wall'
+        }
+      }
+
+      // 结尾双手
+      function loadHands () {
+        const left = document.querySelector('.left-hand-img')
+        const right = document.querySelector('.right-hand-img')
+        if (left) {
+          left.src = './img/hand.png'
+        }
+        if (right) {
+          right.src = './img/hand.png'
         }
       }
     </script>
